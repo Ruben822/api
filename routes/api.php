@@ -23,3 +23,4 @@ Route::post("/mascotass","MascotaController@store")->name("envio");
 Route::get("mascotass","MascotaController@create")->name("crear");
 Route::get("mascotasC/{id}","MascotaController@edit")->name("editar");
 Route::put("mascotasC/{id}","MascotaController@update")->name("actualizar");
+Route::delete("mascotasE/{id}","MascotaController@destroy")->name("eliminar");

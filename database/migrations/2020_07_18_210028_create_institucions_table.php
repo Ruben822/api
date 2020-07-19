@@ -16,6 +16,7 @@ class CreateInstitucionsTable extends Migration
         Schema::create('institucions', function (Blueprint $table) {
             $table->increments("idIns");
             $table->String("NombreIns");
+            $table->timestamp("BorradoIns")->nullable();
             $table->timestamps();
            
         });

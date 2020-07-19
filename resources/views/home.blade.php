@@ -26,20 +26,25 @@
                     <th>Institucion</th>
                     <th>Opciones</th>
                 </tr>
-            @foreach ($sql as $item)
-                <tr>
-                    <td>{{$item->idMas }}</td>
-                    <td>{{$item->NombreMas }}</td>
-                    <td>{{$item->NombreAni }}</td>
-                    <td>{{$item->NombreRaz }}</td>
-                    <td>{{$item->FechaNacimiento }}</td>
-                    <td>
+            @foreach ($sql as $item)            
+            <tr>
+                <td>{{$item->idMas }}</td>
+                <td>{{$item->NombreMas }}</td>
+                <td>{{$item->NombreAni }}</td>
+                <td>{{$item->NombreRaz }}</td>
+                <td>{{$item->FechaNacimiento }}</td>
+                <td>
                         {{$foto="imagenes/".$item->Foto}}
                         <img src="{{$foto}}" alt="">
                     </td>
                     <td>{{$item->NombreIns }}</td>
                     <td>
-                        <a href="{{ route('editar',$item->idMas) }}"><button class="btn btn-success" >Editar Mascota</button></a>
+                        <a href="{{ route('editar',$item->idMas) }}"><button class="btn btn-success mb-1" >Editar Mascota</button></a>
+                        <form action="{{ route('eliminar',$item->idMas) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

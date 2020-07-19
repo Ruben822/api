@@ -22,6 +22,7 @@ class MascotaController extends Controller
         ->Join('razas', 'mascotas.Raza', '=', 'razas.idRaz')
         ->Join('animals', 'mascotas.Especie', '=', 'animals.idAni')
         ->Join('institucions', 'mascotas.Institucion', '=', 'institucions.idIns')
+        ->where('BorradoMas','=',null)
         ->orderBy('idMas','asc')
         ->get();
         return view("home",compact("sql"));
@@ -136,8 +137,11 @@ class MascotaController extends Controller
      * @param  \App\Mascota  $mascota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mascota $mascota)
+    public function destroy($mascota)
     {
-        //
+        $borrar = Mascota::find($mascota);
+        $borrar->BorradoMas = now();
+        $borrar->save();
+        return redirect(route('inicio'));
     }
 }

@@ -13,6 +13,7 @@ class Mascota extends Model
         "Raza",
         "FechaNacimiento",
         "Foto",
-        "Institucion"
+        "Institucion",
+        "BorradoMas"
     ];
 }

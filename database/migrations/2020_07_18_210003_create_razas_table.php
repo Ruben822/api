@@ -16,6 +16,7 @@ class CreateRazasTable extends Migration
         Schema::create('razas', function (Blueprint $table) {
             $table->increments("idRaz");
             $table->String("NombreRaz");
+            $table->timestamp("BorradoRaz")->nullable();
             $table->timestamps();
            
         });

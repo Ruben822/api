@@ -22,6 +22,7 @@ class CreateMascotasTable extends Migration
             $table->date("FechaNacimiento");
             $table->string("Foto")->nullable();
             $table->integer("Institucion")->unsigned();
+            $table->timestamp("BorradoMas")->nullable();
             $table->timestamps();
             $table->foreign("Especie")->references('idAni')->on('animals');
             $table->foreign("Raza")->references('idRaz')->on('razas');
