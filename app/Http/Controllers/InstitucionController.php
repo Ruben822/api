@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Institucion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class InstitucionController extends Controller
 {
@@ -41,7 +42,6 @@ class InstitucionController extends Controller
             "tel"=>"required",
             "correo"=>"required|email|unique:institucions,Correo"
         ]);
-
         $ins = new Institucion();
         $ins->NombreIns = $request->nombre;
         $ins->Telefono = $request->tel;
