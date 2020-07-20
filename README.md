@@ -12,12 +12,12 @@ Ejemplo: <b>http://127.0.0.1:8000/api/mascotas</b>
 <h1>Documentacion</h1>
 <h2>Navegacion</h2>
 <p>
-En la vista inicial se trae la lista de mascotas y damos las opciones para cada uno de los registros (editar-borrar). Tambien damos la opcion de crear una mascota. Tambien esta la opcion de listar todas las mascotas borradas gracias al <b>softdelete</b><br>
-Esta la opcion <b>Instituciones</b>, que tiene brinda las mismas opciones de la vista inicial.
+En la vista inicial se trae la lista de mascotas y damos las opciones para cada uno de los registros (editar-borrar). Tambien damos la opcion de crear una mascota. igualment esta la opcion de listar todas las mascotas borradas gracias al <b>softdelete</b><br>
+Esta la opcion <b>Instituciones</b>, que brinda las mismas opciones de la vista inicial.
 </p>
 <h2>Registro de Mascotas e Instituciones</h2>
 <p>
-Para registrar una mascota o una institucion se deberan llenar los campos requiredos en el planteamiento del proyecto, en caso de que no se cumpla por lo requerido de alguno de los campos estos se vaciaran y no se registrara la mascota o institucion. En el caso del campo <b>correo</b> que se requiere en el registro de la institucion se debe tener en cuenta que no se podra repetir un correo en dos instituciones distintas ni aunque una de ellas este borrada
+Para registrar una mascota o una institucion se deberan llenar los campos requeridos en el planteamiento del proyecto, en caso de que no se cumpla lo requerido de alguno de los campos estos se vaciaran y no se registrara la mascota o institucion. En el caso del campo <b>correo</b> que se requiere en el registro de la institucion se debe tener en cuenta que no se podra repetir un correo en dos instituciones distintas ni aunque una de ellas este borrada
 </p>
 <h2>Actualizacion de Mascotas e Instituciones</h2>
 <p>
@@ -25,5 +25,5 @@ Para actualizar es un proceso similar al de registro. Se tendra en cuenta las mi
 </p>
 <h2>Borrado de Mascotas e Instituciones</h2>
 <p>
-Al momento de "borrar" un registro se aplica el softdelete, por lo cual no se perdera ningun registro y al registro "borrado" se le agregara una fecha de en la cual se habria borrado el registro. de esta manera se manejara el listado de registros
+Al momento de "borrar" un registro se aplica el softdelete, por lo cual no se perdera ningun registro y al registro "borrado" se le agregara una fecha de en la cual paso a estar borrado el registro. de esta manera se manejara el listado de registros
 </p>
