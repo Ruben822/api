@@ -2,21 +2,16 @@
 
 @section('contenido')
 <div class="row justify-content-center mt-5 mb-5 h-100">    
-    <div class="col-sm-8 align-self-center text-center">
-        <h1 class="mb-5">Mascotas</h1>    
-        <a href="{{ route('crear') }}"> 
+    <div class="col-sm-6 align-self-center text-center">
+        <h1 class="mb-5">Mascotas borradas</h1>    
+        <a href="{{ route('inicio') }}"> 
             <button type="button" class="btn btn-success ml-5" >
-                Agregar mascota
+                Mascotas
             </button>
         </a>
         <a href="{{ route('inicioI') }}"> 
             <button type="button" class="btn btn-success ml-5" >
                 Instituciones
-            </button>
-        </a>
-        <a href="{{ route('borrados') }}"> 
-            <button type="button" class="btn btn-success ml-5" >
-                Mascotas borradas
             </button>
         </a>
         <table id="eje" class="mt-5 table-hover table-responsive table-striped table-bordered table text-center">
@@ -28,7 +23,7 @@
                 <th>Fecha de nacimiento</th>
                 <th>Foto</th>
                 <th>Institucion</th>
-                <th>Opciones</th>
+                <th>Borrado</th>
             </tr>
         @foreach ($sql as $item)            
         <tr>
@@ -42,12 +37,7 @@
             </td>
             <td>{{$item->NombreIns }}</td>
             <td>
-                <a href="{{ route('editar',$item->idMas) }}"><button class="btn btn-success mb-1" >Editar Mascota</button></a>                   
-                <form action="{{ route('eliminar',$item->idMas) }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button class="btn btn-danger" type="submit">Eliminar</button>
-                </form>
+               {{$item->BorradoMas }}
             </td>
             </tr>
         @endforeach

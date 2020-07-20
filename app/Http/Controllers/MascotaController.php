@@ -79,9 +79,16 @@ class MascotaController extends Controller
      * @param  \App\Mascota  $mascota
      * @return \Illuminate\Http\Response
      */
-    public function show(Mascota $mascota)
+    public function borrados(Mascota $mascota)
     {
-        //
+        $sql=DB::table('mascotas')
+        ->Join('razas', 'mascotas.Raza', '=', 'razas.idRaz')
+        ->Join('animals', 'mascotas.Especie', '=', 'animals.idAni')
+        ->Join('institucions', 'mascotas.Institucion', '=', 'institucions.idIns')
+        ->where('BorradoMas','!=',null)
+        ->orderBy('idMas','asc')
+        ->get();
+        return view("mascotasBorradas",compact("sql"));
     }
 
     /**

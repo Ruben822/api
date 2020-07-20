@@ -56,9 +56,10 @@ class InstitucionController extends Controller
      * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function show(Institucion $institucion)
+    public function borrados(Institucion $institucion)
     {
-        //
+        $ins = Institucion::where("BorradoIns","!=",null)->get();
+        return view("institucionesBorradas",compact("ins"));
     }
 
     /**
