@@ -17,7 +17,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>1,
             "Raza"=>23,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"perro1.jpg",
             "Institucion"=>1
         ]);
         DB::table('mascotas')->insert([
@@ -25,7 +25,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>2,
             "Raza"=>133,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"gato1.jpg",
             "Institucion"=>2
         ]);
         DB::table('mascotas')->insert([
@@ -33,7 +33,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>1,
             "Raza"=>13,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"perro2.png",
             "Institucion"=>3
         ]);
         DB::table('mascotas')->insert([
@@ -41,7 +41,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>2,
             "Raza"=>112,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"gato2.jpg",
             "Institucion"=>1
         ]);
         DB::table('mascotas')->insert([
@@ -49,7 +49,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>1,
             "Raza"=>55,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"perro3.jpg",
             "Institucion"=>3
         ]);
         DB::table('mascotas')->insert([
@@ -57,7 +57,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>1,
             "Raza"=>46,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"perro4.jpg",
             "Institucion"=>1
         ]);
         DB::table('mascotas')->insert([
@@ -65,7 +65,7 @@ class MascotaSeeder extends Seeder
             "Especie"=>2,
             "Raza"=>123,
             "FechaNacimiento"=>"2020-07-08",
-            "Foto"=>"jisjis",
+            "Foto"=>"gato3.jpg",
             "Institucion"=>3
         ]);
     }

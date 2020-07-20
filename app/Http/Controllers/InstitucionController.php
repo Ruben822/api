@@ -14,7 +14,8 @@ class InstitucionController extends Controller
      */
     public function index()
     {
-        //
+        $ins = Institucion::where("BorradoIns","=",null)->get();
+        return view("homeIns",compact("ins"));
     }
 
     /**
@@ -24,7 +25,7 @@ class InstitucionController extends Controller
      */
     public function create()
     {
-        //
+        return view("addInstitucion");
     }
 
     /**
@@ -35,7 +36,18 @@ class InstitucionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "nombre"=>"required|min:5|max:120",
+            "tel"=>"required",
+            "correo"=>"required|email|unique:institucions,Correo"
+        ]);
+
+        $ins = new Institucion();
+        $ins->NombreIns = $request->nombre;
+        $ins->Telefono = $request->tel;
+        $ins->Correo = $request->correo;
+        $ins->save();
+        return redirect(route("inicioI"));
     }
 
     /**
@@ -55,9 +67,10 @@ class InstitucionController extends Controller
      * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Institucion $institucion)
+    public function edit( $id)
     {
-        //
+        $sql = Institucion::findOrfail($id);
+        return view("editInstitucion",compact("sql"));
     }
 
     /**
@@ -67,9 +80,20 @@ class InstitucionController extends Controller
      * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Institucion $institucion)
+    public function update(Request $request, $institucion)
     {
-        //
+        $request->validate([
+            "nombre"=>"required|min:5|max:120",
+            "tel"=>"required",
+            "correo"=>"required|email|unique:institucions,Correo,".$institucion.",idIns"
+        ]);
+
+        $ins = Institucion::findOrfail($institucion);
+        $ins->NombreIns = $request->nombre;
+        $ins->Telefono = $request->tel;
+        $ins->Correo = $request->correo;
+        $ins->save();
+        return redirect(route("inicioI"));
     }
 
     /**
@@ -78,8 +102,11 @@ class InstitucionController extends Controller
      * @param  \App\Institucion  $institucion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Institucion $institucion)
+    public function destroy( $institucion)
     {
-        //
+        $borrar = Institucion::find($institucion);
+        $borrar->BorradoIns = now();
+        $borrar->save();
+        return redirect(route('inicioI'));
     }
 }

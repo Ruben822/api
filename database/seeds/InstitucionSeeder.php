@@ -13,13 +13,19 @@ class InstitucionSeeder extends Seeder
     public function run()
     {
         DB::table('institucions')->insert([
-            "NombreIns"=>"patitas felices"
+            "NombreIns"=>"patitas felices",
+            "Telefono"=>"1231231231",
+            "Correo"=>"patitas@gmail.com"
         ]);
         DB::table('institucions')->insert([
-            "NombreIns"=>"little friends"
+            "NombreIns"=>"little friends",
+            "Telefono"=>"3213213211",
+            "Correo"=>"littlefriends@gmail.com"
         ]);
         DB::table('institucions')->insert([
-            "NombreIns"=>"peluditos"
+            "NombreIns"=>"peluditos",
+            "Telefono"=>"1234567891",
+            "Correo"=>"peluditos@gmail.com"
         ]);
     }
 }

@@ -11,8 +11,13 @@
     <div class="row justify-content-center mt-5 mb-5 h-100">        
         <div class="col-sm-8 align-self-center text-center">
             <a href="{{ route('crear') }}"> 
-            <button type="button" class="btn btn-success" >
+                <button type="button" class="btn btn-success ml-5" >
                     Agregar mascota
+                </button>
+            </a>
+            <a href="{{ route('inicioI') }}"> 
+                <button type="button" class="btn btn-success ml-5" >
+                    Instituciones
                 </button>
             </a>
             <table id="eje" class="mt-5 table-hover table-responsive table-striped table-bordered table text-center">
@@ -33,19 +38,18 @@
                 <td>{{$item->NombreAni }}</td>
                 <td>{{$item->NombreRaz }}</td>
                 <td>{{$item->FechaNacimiento }}</td>
+                <td>        
+                    <img src="{{ asset('imagenes/'.$item->Foto) }}" style="height: 50px " alt="">
+                </td>
+                <td>{{$item->NombreIns }}</td>
                 <td>
-                        {{$foto="imagenes/".$item->Foto}}
-                        <img src="{{$foto}}" alt="">
-                    </td>
-                    <td>{{$item->NombreIns }}</td>
-                    <td>
-                        <a href="{{ route('editar',$item->idMas) }}"><button class="btn btn-success mb-1" >Editar Mascota</button></a>
-                        <form action="{{ route('eliminar',$item->idMas) }}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button class="btn btn-danger" type="submit">Eliminar</button>
-                        </form>
-                    </td>
+                    <a href="{{ route('editar',$item->idMas) }}"><button class="btn btn-success mb-1" >Editar Mascota</button></a>                   
+                    <form action="{{ route('eliminar',$item->idMas) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                    </form>
+                </td>
                 </tr>
             @endforeach
         </div>
